@@ -116,18 +116,18 @@ Gem::Specification.new do |s|
     s.specification_version = 3
 
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<rails>, [">= 3.1.0"])
-      s.add_runtime_dependency(%q<rails_autolink>, [">= 1.0.4"])
-      s.add_runtime_dependency(%q<jquery-rails>, [">= 1.0.0"])
+      s.add_runtime_dependency(%q<rails>, ["~> 4.0.0"])
+      s.add_runtime_dependency(%q<rails_autolink>, ["~> 1.1.4"])
+      s.add_runtime_dependency(%q<jquery-rails>, ["~> 3.0.4"])
     else
-      s.add_dependency(%q<rails>, [">= 3.1.0"])
-      s.add_dependency(%q<rails_autolink>, [">= 1.0.4"])
-      s.add_dependency(%q<jquery-rails>, [">= 1.0.0"])
+      s.add_dependency(%q<rails>, ["~> 4.0.0"])
+      s.add_dependency(%q<rails_autolink>, ["~> 1.1.4"])
+      s.add_dependency(%q<jquery-rails>, ["~> 3.0.4"])
     end
   else
-    s.add_dependency(%q<rails>, [">= 3.1.0"])
-    s.add_dependency(%q<rails_autolink>, [">= 1.0.4"])
-    s.add_dependency(%q<jquery-rails>, [">= 1.0.0"])
+    s.add_dependency(%q<rails>, ["~> 4.0.0"])
+    s.add_dependency(%q<rails_autolink>, ["~> 1.1.4"])
+    s.add_dependency(%q<jquery-rails>, ["~> 3.0.4"])
   end
 end
 

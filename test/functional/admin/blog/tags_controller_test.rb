@@ -15,7 +15,7 @@ class Admin::Blog::TagsControllerTest < ActionController::TestCase
     assert_template :edit
     assert assigns(:tag)
   end
-  
+
   def test_get_new
     get :new
     assert_response :success
@@ -31,12 +31,12 @@ class Admin::Blog::TagsControllerTest < ActionController::TestCase
       }
       assert_response :redirect
       assert_redirected_to :action => :index
-      
+
       tag.reload
-      assert_equal 'Updated', tag.name 
+      assert_equal 'Updated', tag.name
     end
   end
-  
+
   def test_update_failure
     tag = blog_tags(:tag)
     assert_no_difference 'Blog::Tag.count' do
@@ -46,9 +46,9 @@ class Admin::Blog::TagsControllerTest < ActionController::TestCase
       assert_response :success
       assert_template :edit
       assert_equal 'Failed to update Blog Tag', flash[:error]
-      
+
       tag.reload
-      assert_equal 'tag', tag.name 
+      assert_equal 'tag', tag.name
     end
   end
 
@@ -63,7 +63,7 @@ class Admin::Blog::TagsControllerTest < ActionController::TestCase
       assert_equal 'Blog Tag created', flash[:notice]
     end
   end
-  
+
   def test_creation_failure
     assert_no_difference 'Blog::Tag.count' do
       post :create, :tag => {
@@ -75,7 +75,7 @@ class Admin::Blog::TagsControllerTest < ActionController::TestCase
       assert_equal 'Failed to create Blog Tag', flash[:error]
     end
   end
-  
+
   def test_destroy
     assert_difference 'Blog::Tag.count', -1 do
       delete :destroy, :id => blog_tags(:tag)
@@ -84,5 +84,5 @@ class Admin::Blog::TagsControllerTest < ActionController::TestCase
       assert_equal 'Blog Tag removed', flash[:notice]
     end
   end
-  
+
 end
