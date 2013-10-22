@@ -1,6 +1,6 @@
 class Blog::Tagging < ActiveRecord::Base
 
-  attr_accessible :post
+  # attr_accessible :post
 
   self.table_name = :blog_taggings
   
